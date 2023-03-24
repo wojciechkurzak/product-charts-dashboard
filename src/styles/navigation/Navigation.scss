@@ -1,0 +1,10 @@
+nav {
+  width: 300px;
+  height: calc(100% - 60px);
+  position: fixed;
+  top: 60px;
+  left: 0;
+  background-color: #0a0a0a;
+  box-shadow: 0 0 6px 0 #000;
+  z-index: 1;
+}
