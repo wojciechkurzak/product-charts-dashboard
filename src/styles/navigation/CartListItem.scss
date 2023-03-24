@@ -1,0 +1,13 @@
+.cart-list-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 46px;
+  background-color: #111113;
+  border-radius: 8px;
+
+  p {
+    font-size: 18px;
+  }
+}

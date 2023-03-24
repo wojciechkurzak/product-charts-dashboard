@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import CartAddButton from './CartAddButton'
 import '../../styles/navigation/Navigation.scss'
 import CartEditButton from './CartEditButton'
+import CartList from './CartList'
 
 const Navigation = () => {
   const [carts, setCarts] = useState<number[]>([])
@@ -21,7 +22,9 @@ const Navigation = () => {
         <CartAddButton onClick={handleAddCart} />
         <CartEditButton onClick={handleToggleEdit} />
       </div>
-      <div className='navigation-carts'></div>
+      <div className='navigation-carts'>
+        <CartList carts={carts} />
+      </div>
     </nav>
   )
 }
