@@ -4,7 +4,7 @@ import '../../styles/navigation/CartAddButton.scss'
 const CartAddButton = ({ onClick }: CartAddButtonProps) => {
   return (
     <button onClick={onClick} className='header-add-button'>
-      Add new cart
+      <span>Add new cart</span>
     </button>
   )
 }
