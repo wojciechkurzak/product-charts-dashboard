@@ -8,8 +8,12 @@ export type CartEditButtonProps = {
 
 export type CartListProps = {
   carts: number[]
+  edit: boolean
+  remove: (value: number) => void
 }
 
 export type CartListItemProps = {
   cart: number
+  edit: boolean
+  remove: (value: number) => void
 }

@@ -2,12 +2,53 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
   width: 100%;
   height: 46px;
   background-color: #111113;
   border-radius: 8px;
+  overflow: hidden;
 
   p {
     font-size: 18px;
   }
+
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 40px;
+    border-left: 2px solid red;
+    background-color: rgba(255, 0, 0, 0.1);
+    transition: background-color 0.2s;
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgba(255, 0, 0, 0.6);
+    }
+
+    svg {
+      color: #fff;
+      width: 22px;
+      height: 22px;
+    }
+  }
 }
+
+// .delete{
+//   &::after {
+//     content: '';
+//     display: block;
+//     position: absolute;
+//     top: 0;
+//     right: 0;
+//     width: 40px;
+//     height: 100%;
+//     border-left: 2px solid orange;
+//     background-color: #fff;
+//   }
+// }

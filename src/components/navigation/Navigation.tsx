@@ -16,6 +16,10 @@ const Navigation = () => {
     setEdit(!edit)
   }
 
+  const handleRemoveItem = (cart: number): void => {
+    setCarts(carts.filter((element) => element !== cart))
+  }
+
   return (
     <nav>
       <div className='navigation-buttons'>
@@ -23,7 +27,7 @@ const Navigation = () => {
         <CartEditButton onClick={handleToggleEdit} />
       </div>
       <div className='navigation-carts'>
-        <CartList carts={carts} />
+        <CartList carts={carts} edit={edit} remove={handleRemoveItem} />
       </div>
     </nav>
   )
