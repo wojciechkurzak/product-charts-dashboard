@@ -1,0 +1,13 @@
+.header-add-button {
+  background-color: transparent;
+  border: 2px solid #079a80;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: rgba(7, 154, 128, 0.2);
+  }
+}
