@@ -1,7 +1,4 @@
-export type CartType = {
-  id: string
-  name: string
-}
+import { Cart } from '../components/interfaces/CartInterface'
 
 export type CartAddButtonProps = {
   onClick: () => void
@@ -12,14 +9,13 @@ export type CartEditButtonProps = {
 }
 
 export type CartListProps = {
-  carts: CartType[]
+  carts: Cart[]
   edit: boolean
   remove: (value: string) => void
 }
 
 export type CartListItemProps = {
-  cart: CartType
+  cart: Cart
   edit: boolean
   remove: (value: string) => void
-  route: number
 }

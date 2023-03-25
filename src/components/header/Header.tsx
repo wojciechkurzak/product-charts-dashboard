@@ -1,10 +1,11 @@
+import { NavLink } from 'react-router-dom'
 import '../../styles/header/Header.scss'
 
 const Header = () => {
   return (
     <header>
       <h1>
-        <a href='/'>Dashboard</a>
+        <NavLink to='/'>Dashboard</NavLink>
       </h1>
     </header>
   )

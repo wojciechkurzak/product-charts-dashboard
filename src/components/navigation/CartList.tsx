@@ -5,14 +5,8 @@ import '../../styles/navigation/CartList.scss'
 const CartList = ({ carts, edit, remove }: CartListProps) => {
   return (
     <ul className='cart-list'>
-      {carts.map((cart, index) => (
-        <CartListItem
-          cart={cart}
-          edit={edit}
-          remove={remove}
-          key={cart.id}
-          route={index}
-        />
+      {carts.map((cart) => (
+        <CartListItem cart={cart} edit={edit} remove={remove} key={cart.id} />
       ))}
     </ul>
   )
