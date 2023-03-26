@@ -5,6 +5,7 @@ export type CartAddButtonProps = {
 }
 
 export type CartEditButtonProps = {
+  edit: boolean
   onClick: () => void
 }
 

@@ -26,7 +26,7 @@ const Navigation = ({ carts, add, remove }: any) => {
       />
       <div className='navigation-buttons'>
         <CartAddButton onClick={() => add(name)} />
-        <CartEditButton onClick={handleToggleEdit} />
+        <CartEditButton edit={edit} onClick={handleToggleEdit} />
       </div>
       <div className='navigation-carts'>
         <CartList carts={carts} edit={edit} remove={remove} />
