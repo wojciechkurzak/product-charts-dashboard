@@ -25,23 +25,14 @@ ChartJS.register(
 )
 
 const Chart = ({ products }: ChartProps) => {
-  const [size, setSize] = useState<any>(window.innerWidth)
-
-  const updateSize = () => {
-    setSize(window.innerWidth)
-  }
-
-  useLayoutEffect(() => {
-    window.addEventListener('resize', updateSize)
-    return () => window.removeEventListener('resize', updateSize)
-  }, [])
-
   const options = {
     responsive: true,
     maintainAspectRatio: false,
     scales: {
       x: {
-        display: size < 480 ? false : true,
+        ticks: {
+          minRotation: 70,
+        },
       },
     },
   }

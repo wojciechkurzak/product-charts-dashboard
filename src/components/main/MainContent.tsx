@@ -15,7 +15,6 @@ const MainContent = () => {
     const response = await fetch(`https://dummyjson.com/carts/${routeId}`)
     const data = await response.json()
     setCartItems(data)
-    console.log(data)
   }
 
   useEffect(() => {

@@ -1,9 +1,9 @@
 .chart {
-  height: 480px;
+  min-height: calc(60%);
 }
 
 @media screen and (max-width: 480px) {
   .chart {
-    height: 220px;
+    height: 420px;
   }
 }
