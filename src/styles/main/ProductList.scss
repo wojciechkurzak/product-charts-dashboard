@@ -1,0 +1,15 @@
+.product-list {
+  margin-top: 36px;
+
+  & > p {
+    font-size: 30px;
+  }
+
+  .list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 24px;
+    padding: 20px 0;
+  }
+}

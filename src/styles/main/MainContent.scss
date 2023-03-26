@@ -1,13 +1,8 @@
 .main-content {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
   height: calc(100vh - 60px);
   margin-top: 60px;
   margin-left: 300px;
-  padding: 30px 20px;
-
-  p {
-    font-size: 40px;
-  }
+  padding: 30px 30px;
 }

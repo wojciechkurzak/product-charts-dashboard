@@ -1,0 +1,18 @@
+.product-item {
+  background-color: #0a0a0a;
+  padding: 12px;
+  border-radius: 8px;
+  border: 3px solid #079a80;
+  width: 260px;
+  overflow: hidden;
+
+  & > p {
+    font-size: 18px;
+    height: 40px;
+    overflow: hidden;
+  }
+
+  .price {
+    margin-top: 14px;
+  }
+}
