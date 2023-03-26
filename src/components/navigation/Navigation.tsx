@@ -4,7 +4,7 @@ import CartEditButton from './CartEditButton'
 import CartList from './CartList'
 import '../../styles/navigation/Navigation.scss'
 
-const Navigation = ({ carts, add, remove }: any) => {
+const Navigation = ({ carts, add, remove, menu }: any) => {
   const [name, setName] = useState<string>('')
   const [edit, setEdit] = useState<boolean>(false)
 
@@ -17,7 +17,7 @@ const Navigation = ({ carts, add, remove }: any) => {
   }
 
   return (
-    <nav>
+    <nav className={menu ? 'menu-open' : ''}>
       <input
         type='text'
         value={name}

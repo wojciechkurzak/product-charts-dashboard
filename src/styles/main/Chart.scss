@@ -1,5 +1,9 @@
-.main-chart {
-  display: flex;
-  justify-content: center;
-  // height: 500px;
+.chart {
+  height: 480px;
+}
+
+@media screen and (max-width: 480px) {
+  .chart {
+    height: 220px;
+  }
 }

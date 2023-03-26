@@ -41,3 +41,20 @@ nav {
     display: none;
   }
 }
+
+@media screen and (max-width: 1280px) {
+  nav {
+    transition: transform 0.3s;
+    transform: translateX(-102%);
+  }
+
+  .menu-open {
+    transform: translateX(0);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  nav {
+    width: 100%;
+  }
+}

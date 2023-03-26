@@ -12,6 +12,7 @@ import {
 import { Line } from 'react-chartjs-2'
 import { ChartProps } from '../../types/main-types'
 import '../../styles/main/Chart.scss'
+import { useState, useEffect, useLayoutEffect } from 'react'
 
 ChartJS.register(
   CategoryScale,
@@ -24,9 +25,25 @@ ChartJS.register(
 )
 
 const Chart = ({ products }: ChartProps) => {
+  const [size, setSize] = useState<any>(window.innerWidth)
+
+  const updateSize = () => {
+    setSize(window.innerWidth)
+  }
+
+  useLayoutEffect(() => {
+    window.addEventListener('resize', updateSize)
+    return () => window.removeEventListener('resize', updateSize)
+  }, [])
+
   const options = {
     responsive: true,
-    aspectRatio: 3 / 1,
+    maintainAspectRatio: false,
+    scales: {
+      x: {
+        display: size < 480 ? false : true,
+      },
+    },
   }
 
   const labels = products.map((product: Product) => product.title)
@@ -51,7 +68,11 @@ const Chart = ({ products }: ChartProps) => {
     ],
   }
 
-  return <Line options={options} data={data} height='100vh' />
+  return (
+    <div className='chart'>
+      <Line options={options} data={data} />
+    </div>
+  )
 }
 
 export default Chart

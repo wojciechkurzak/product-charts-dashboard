@@ -7,9 +7,14 @@ import './App.scss'
 
 const App = () => {
   const [carts, setCarts] = useState<Cart[]>([])
+  const [menu, setMenu] = useState<boolean>(false)
 
   const navigate = useNavigate()
   const location = useLocation()
+
+  const handleMenuToggle = (): void => {
+    setMenu(!menu)
+  }
 
   const handleGetAvaibleId = (): string => {
     let id: number
@@ -33,8 +38,13 @@ const App = () => {
 
   return (
     <div className='App'>
-      <Header />
-      <Navigation carts={carts} add={handleAddCart} remove={handleRemoveItem} />
+      <Header onClick={handleMenuToggle} />
+      <Navigation
+        carts={carts}
+        add={handleAddCart}
+        remove={handleRemoveItem}
+        menu={menu}
+      />
       <Outlet context={carts} />
     </div>
   )
