@@ -2,9 +2,16 @@ import { useState } from 'react'
 import CartAddButton from './CartAddButton'
 import CartEditButton from './CartEditButton'
 import CartList from './CartList'
+import { NavigationProps } from '../../types/navigation-types'
 import '../../styles/navigation/Navigation.scss'
 
-const Navigation = ({ carts, add, remove, menu }: any) => {
+const Navigation = ({
+  carts,
+  add,
+  remove,
+  menu,
+  menuHide,
+}: NavigationProps) => {
   const [name, setName] = useState<string>('')
   const [edit, setEdit] = useState<boolean>(false)
 
@@ -34,7 +41,12 @@ const Navigation = ({ carts, add, remove, menu }: any) => {
         <CartEditButton edit={edit} onClick={handleToggleEdit} />
       </div>
       <div className='navigation-carts'>
-        <CartList carts={carts} edit={edit} remove={remove} />
+        <CartList
+          carts={carts}
+          edit={edit}
+          remove={remove}
+          menuHide={menuHide}
+        />
       </div>
     </nav>
   )

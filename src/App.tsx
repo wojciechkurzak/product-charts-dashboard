@@ -16,6 +16,10 @@ const App = () => {
     setMenu(!menu)
   }
 
+  const handleMenuHide = (): void => {
+    setMenu(false)
+  }
+
   const handleGetAvaibleId = (): string => {
     let id: number
     for (id = 1; id < 20; id++) {
@@ -44,6 +48,7 @@ const App = () => {
         add={handleAddCart}
         remove={handleRemoveItem}
         menu={menu}
+        menuHide={handleMenuHide}
       />
       <Outlet context={carts} />
     </div>
