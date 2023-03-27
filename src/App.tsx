@@ -2,7 +2,7 @@ import { useState } from 'react'
 import Header from './components/header/Header'
 import Navigation from './components/navigation/Navigation'
 import { Outlet, useLocation, useNavigate } from 'react-router-dom'
-import { Cart } from './components/interfaces/CartInterface'
+import { Cart } from './interfaces/CartInterface'
 import './App.scss'
 
 const App = () => {

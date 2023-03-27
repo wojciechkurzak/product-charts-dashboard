@@ -1,4 +1,4 @@
-import Product from '../interfaces/ProductInterface'
+import Product from '../../interfaces/ProductInterface'
 import {
   Chart as ChartJS,
   CategoryScale,

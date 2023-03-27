@@ -1,7 +1,7 @@
 import { useLocation, useNavigate, useOutletContext } from 'react-router-dom'
 import Chart from './Chart'
 import { useEffect, useState } from 'react'
-import CartItems from '../interfaces/CartItemsInterface'
+import CartItems from '../../interfaces/CartItemsInterface'
 import ProductList from './ProductList'
 import LoadingPage from '../misc/LoadingPage'
 import '../../styles/main/MainContent.scss'

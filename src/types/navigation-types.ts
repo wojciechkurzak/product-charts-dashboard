@@ -1,4 +1,4 @@
-import { Cart } from '../components/interfaces/CartInterface'
+import { Cart } from '../interfaces/CartInterface'
 
 export type NavigationProps = {
   carts: Cart[]

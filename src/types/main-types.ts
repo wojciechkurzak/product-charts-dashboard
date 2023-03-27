@@ -1,4 +1,4 @@
-import Product from '../components/interfaces/ProductInterface'
+import Product from '../interfaces/ProductInterface'
 
 export type ChartProps = {
   products: Product[]
