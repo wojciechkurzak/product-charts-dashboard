@@ -23,17 +23,22 @@ const MainContent = () => {
   }
 
   useEffect(() => {
-    !isCartExist && navigate('/')
     handleGetData()
   }, [routeId])
 
   return (
     <div className='main-content'>
       {cartItems ? (
-        <>
-          <Chart products={cartItems.products} />
-          <ProductList products={cartItems.products} />
-        </>
+        isCartExist ? (
+          <>
+            <Chart products={cartItems.products} />
+            <ProductList products={cartItems.products} />
+          </>
+        ) : (
+          <div className='not-found'>
+            <p>Cart not found</p>
+          </div>
+        )
       ) : (
         <LoadingPage />
       )}
