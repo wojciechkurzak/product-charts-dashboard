@@ -16,6 +16,11 @@ const Navigation = ({ carts, add, remove, menu }: any) => {
     setEdit(!edit)
   }
 
+  const handleAddItem = (): void => {
+    add(name)
+    setName('')
+  }
+
   return (
     <nav className={menu ? 'menu-open' : ''}>
       <input
@@ -25,7 +30,7 @@ const Navigation = ({ carts, add, remove, menu }: any) => {
         placeholder='Cart name'
       />
       <div className='navigation-buttons'>
-        <CartAddButton onClick={() => add(name)} />
+        <CartAddButton onClick={handleAddItem} />
         <CartEditButton edit={edit} onClick={handleToggleEdit} />
       </div>
       <div className='navigation-carts'>
