@@ -12,7 +12,6 @@ import {
 import { Line } from 'react-chartjs-2'
 import { ChartProps } from '../../types/main-types'
 import '../../styles/main/Chart.scss'
-import { useState, useEffect, useLayoutEffect } from 'react'
 
 ChartJS.register(
   CategoryScale,

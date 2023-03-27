@@ -19,5 +19,4 @@ export type CartListItemProps = {
   cart: Cart
   edit: boolean
   remove: (value: string) => void
-  menu: boolean
 }

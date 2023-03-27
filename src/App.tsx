@@ -18,7 +18,7 @@ const App = () => {
 
   const handleGetAvaibleId = (): string => {
     let id: number
-    for (id = 1; id <= 20; id++) {
+    for (id = 1; id < 20; id++) {
       if (!carts.some((cart) => cart.id === id.toString())) return id.toString()
     }
     return id.toString()
