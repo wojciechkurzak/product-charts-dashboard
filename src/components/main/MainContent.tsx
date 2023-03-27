@@ -1,15 +1,20 @@
-import { useLocation } from 'react-router-dom'
+import { useLocation, useNavigate, useOutletContext } from 'react-router-dom'
 import Chart from './Chart'
 import { useEffect, useState } from 'react'
 import CartItems from '../interfaces/CartItemsInterface'
-import '../../styles/main/MainContent.scss'
 import ProductList from './ProductList'
+import LoadingPage from '../misc/LoadingPage'
+import '../../styles/main/MainContent.scss'
 
 const MainContent = () => {
   const [cartItems, setCartItems] = useState<CartItems | null>(null)
+  const carts = useOutletContext<CartItems[]>()
 
+  const navigate = useNavigate()
   const location = useLocation()
+
   const routeId = location.pathname.slice(6, 8)
+  const isCartExist = carts.some((cart) => cart.id.toString() === routeId)
 
   const handleGetData = async (): Promise<void> => {
     const response = await fetch(`https://dummyjson.com/carts/${routeId}`)
@@ -18,16 +23,19 @@ const MainContent = () => {
   }
 
   useEffect(() => {
+    !isCartExist && navigate('/')
     handleGetData()
   }, [routeId])
 
   return (
     <div className='main-content'>
-      {cartItems && (
+      {cartItems ? (
         <>
           <Chart products={cartItems.products} />
           <ProductList products={cartItems.products} />
         </>
+      ) : (
+        <LoadingPage />
       )}
     </div>
   )
