@@ -23,3 +23,18 @@
     margin-left: 0;
   }
 }
+
+@media screen and (max-width: 480px) {
+  .create-cart {
+    .title {
+      flex-direction: column;
+      justify-content: baseline;
+      align-items: center;
+      gap: 20px;
+
+      p {
+        font-size: 26px;
+      }
+    }
+  }
+}
