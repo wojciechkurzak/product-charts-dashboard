@@ -44,8 +44,7 @@ const App = () => {
     const id = handleGetAvaibleId()
     const newCart = { id: id, products: products }
     setCarts([...carts, newCart])
-    // navigate(`/cart/${id}`)
-    // console.log(newCart)
+    navigate(`/cart/${id}`)
   }
 
   const handleRemoveCart = (id: number): void => {
