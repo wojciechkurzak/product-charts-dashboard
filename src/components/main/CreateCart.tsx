@@ -13,7 +13,10 @@ const CreateCart = () => {
   const addCart = context.addCart
 
   const handleSetPickedProducts = (product: Product): void => {
-    setPickedProducts([...pickedProducts, product])
+    const updatedProducts = pickedProducts.filter(
+      (picked) => picked.id !== product.id
+    )
+    setPickedProducts([...updatedProducts, product])
   }
 
   const handleAddCart = (): void => {
