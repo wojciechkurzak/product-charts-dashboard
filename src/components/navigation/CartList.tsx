@@ -5,15 +5,16 @@ import '../../styles/navigation/CartList.scss'
 const CartList = ({ carts, edit, remove, menuHide }: CartListProps) => {
   return (
     <ul className='cart-list'>
-      {carts.map((cart) => (
-        <CartListItem
-          cart={cart}
-          edit={edit}
-          remove={remove}
-          menuHide={menuHide}
-          key={cart.id}
-        />
-      ))}
+      {carts &&
+        carts.map((cart) => (
+          <CartListItem
+            cart={cart}
+            edit={edit}
+            remove={remove}
+            menuHide={menuHide}
+            key={cart.id}
+          />
+        ))}
     </ul>
   )
 }

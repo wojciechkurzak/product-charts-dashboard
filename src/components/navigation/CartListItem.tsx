@@ -11,7 +11,7 @@ const CartListItem = ({ cart, edit, remove, menuHide }: CartListItemProps) => {
         className={({ isActive }) => (isActive ? 'active' : undefined)}
         onClick={menuHide}
       >
-        <p>{cart.name}</p>
+        <p>Cart {cart.id}</p>
       </NavLink>
       {edit && (
         <div onClick={() => remove(cart.id)}>

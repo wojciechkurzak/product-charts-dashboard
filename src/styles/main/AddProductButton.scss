@@ -1,0 +1,13 @@
+.add-product {
+  border: 2px solid orange;
+  background-color: transparent;
+  padding: 0 20px;
+  font-size: 16px;
+  border-radius: 6px;
+  transition: background-color 0.2s;
+  cursor: pointer;
+
+  &:hover {
+    background-color: orange;
+  }
+}

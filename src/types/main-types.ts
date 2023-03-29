@@ -9,7 +9,18 @@ export type ProductListProps = {
 }
 
 export type ProductProps = {
-  title: string
-  price: number
-  discountedPrice: number
+  product: Product
+}
+
+export type AddProductButtonProps = {
+  create: () => void
+}
+
+export type AddProductListProps = {
+  add: (product: Product) => void
+}
+
+export type AddProductItemProps = {
+  product: Product
+  add: (product: Product) => void
 }

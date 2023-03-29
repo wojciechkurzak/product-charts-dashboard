@@ -1,0 +1,25 @@
+.create-cart {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 60px);
+  margin-top: 60px;
+  margin-left: 300px;
+  padding: 30px 30px;
+  gap: 20px;
+
+  .title {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+
+    p {
+      font-size: 30px;
+    }
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .create-cart {
+    margin-left: 0;
+  }
+}

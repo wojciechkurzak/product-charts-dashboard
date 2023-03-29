@@ -3,41 +3,26 @@ import CartAddButton from './CartAddButton'
 import CartEditButton from './CartEditButton'
 import CartList from './CartList'
 import { NavigationProps } from '../../types/navigation-types'
+import { useNavigate } from 'react-router-dom'
 import '../../styles/navigation/Navigation.scss'
 
-const Navigation = ({
-  carts,
-  add,
-  remove,
-  menu,
-  menuHide,
-}: NavigationProps) => {
-  const [name, setName] = useState<string>('')
+const Navigation = ({ carts, remove, menu, menuHide }: NavigationProps) => {
   const [edit, setEdit] = useState<boolean>(false)
 
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setName(event.target.value)
-  }
+  const navigate = useNavigate()
 
   const handleToggleEdit = (): void => {
     setEdit(!edit)
   }
 
-  const handleAddItem = (): void => {
-    add(name)
-    setName('')
+  const handleAddCart = (): void => {
+    navigate('create')
   }
 
   return (
     <nav className={menu ? 'menu-open' : ''}>
-      <input
-        type='text'
-        value={name}
-        onChange={handleInputChange}
-        placeholder='Cart name'
-      />
       <div className='navigation-buttons'>
-        <CartAddButton onClick={handleAddItem} />
+        <CartAddButton onClick={handleAddCart} />
         <CartEditButton edit={edit} onClick={handleToggleEdit} />
       </div>
       <div className='navigation-carts'>

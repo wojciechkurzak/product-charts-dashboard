@@ -6,15 +6,12 @@ import '../../styles/main/ProductList.scss'
 const ProductList = ({ products }: ProductListProps) => {
   return (
     <div className='product-list'>
-      <p>Products</p>
+      <div className='title'>
+        <p>Products</p>
+      </div>
       <div className='list'>
         {products.map((product: Product, index) => (
-          <ProductItem
-            title={product.title}
-            price={product.price}
-            discountedPrice={product.discountedPrice / product.quantity}
-            key={index}
-          />
+          <ProductItem product={product} key={index} />
         ))}
       </div>
     </div>

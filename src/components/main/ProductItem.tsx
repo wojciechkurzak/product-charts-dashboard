@@ -1,13 +1,28 @@
 import { ProductProps } from '../../types/main-types'
 import '../../styles/main/ProductItem.scss'
 
-const ProductItem = ({ title, price, discountedPrice }: ProductProps) => {
+const ProductItem = ({ product }: ProductProps) => {
   return (
     <div className='product-item'>
-      <p>{title}</p>
+      <p>
+        {product.quantity} x {product.title}
+      </p>
       <div className='price'>
-        <p>Price: {price.toFixed(2)}</p>
-        <p>Discounted Price: {discountedPrice.toFixed(2)}</p>
+        <p>Price: {product.price}</p>
+        <p>
+          Discounted Price:{' '}
+          {Math.ceil(
+            product.price - (product.price * product.discountPercentage) / 100
+          )}
+        </p>
+        <p>
+          Total:{' '}
+          {Math.ceil(
+            (product.price -
+              (product.price * product.discountPercentage) / 100) *
+              product.quantity
+          )}
+        </p>
       </div>
     </div>
   )

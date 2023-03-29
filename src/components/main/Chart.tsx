@@ -49,8 +49,10 @@ const Chart = ({ products }: ChartProps) => {
       },
       {
         label: 'Discounted price',
-        data: products.map(
-          (product: Product) => product.discountedPrice / product.quantity
+        data: products.map((product: Product) =>
+          Math.ceil(
+            product.price - (product.price * product.discountPercentage) / 100
+          )
         ),
         borderColor: 'rgb(7, 154, 128)',
         backgroundColor: 'rgb(7, 154, 128)',

@@ -1,16 +1,26 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Header from './components/header/Header'
 import Navigation from './components/navigation/Navigation'
 import { Outlet, useLocation, useNavigate } from 'react-router-dom'
-import { Cart } from './interfaces/CartInterface'
+import Cart from './interfaces/CartInterface'
+import LoadingPage from './components/misc/LoadingPage'
+import Product from './interfaces/ProductInterface'
 import './App.scss'
 
 const App = () => {
   const [carts, setCarts] = useState<Cart[]>([])
+  const [pending, setPending] = useState<boolean>(true)
   const [menu, setMenu] = useState<boolean>(false)
 
   const navigate = useNavigate()
   const location = useLocation()
+
+  const handleGetCarts = async (): Promise<void> => {
+    const response = await fetch('https://dummyjson.com/carts')
+    const data = await response.json()
+    setCarts(data.carts)
+    setPending(false)
+  }
 
   const handleMenuToggle = (): void => {
     setMenu(!menu)
@@ -20,37 +30,50 @@ const App = () => {
     setMenu(false)
   }
 
-  const handleGetAvaibleId = (): string => {
-    let id: number
-    for (id = 1; id < 20; id++) {
-      if (!carts.some((cart) => cart.id === id.toString())) return id.toString()
+  const handleGetAvaibleId = (): number => {
+    let id: number = 1
+    for (let cart in carts) {
+      if (!carts.some((cart) => cart.id === id)) return id
+      id++
     }
-    return id.toString()
+    return id
   }
 
-  const handleAddCart = (name: string): void => {
-    if (!name.length || carts.length >= 20) return
+  const handleAddCart = (products: Product[]): void => {
+    if (products.length === 0) return
     const id = handleGetAvaibleId()
-    setCarts([{ id: id, name: name }, ...carts])
+    const newCart = { id: id, products: products }
+    setCarts([...carts, newCart])
+    // navigate(`/cart/${id}`)
+    // console.log(newCart)
   }
 
-  const handleRemoveItem = (id: string): void => {
+  const handleRemoveCart = (id: number): void => {
     const routeId = location.pathname.slice(6, 8)
-    if (routeId === id) navigate('/')
+    if (parseInt(routeId) === id) navigate('/')
     setCarts(carts.filter((cart) => cart.id !== id))
   }
 
+  useEffect(() => {
+    handleGetCarts()
+  }, [])
+
   return (
     <div className='App'>
-      <Header onClick={handleMenuToggle} />
-      <Navigation
-        carts={carts}
-        add={handleAddCart}
-        remove={handleRemoveItem}
-        menu={menu}
-        menuHide={handleMenuHide}
-      />
-      <Outlet context={carts} />
+      {!pending ? (
+        <>
+          <Header onClick={handleMenuToggle} />
+          <Navigation
+            carts={carts}
+            remove={handleRemoveCart}
+            menu={menu}
+            menuHide={handleMenuHide}
+          />
+          <Outlet context={{ carts: carts, addCart: handleAddCart }} />
+        </>
+      ) : (
+        <LoadingPage />
+      )}
     </div>
   )
 }

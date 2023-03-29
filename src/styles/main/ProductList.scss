@@ -1,8 +1,13 @@
 .product-list {
   margin-top: 80px;
 
-  & > p {
-    font-size: 30px;
+  .title {
+    display: flex;
+    gap: 20px;
+
+    p {
+      font-size: 30px;
+    }
   }
 
   .list {
