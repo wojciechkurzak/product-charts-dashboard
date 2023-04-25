@@ -32,10 +32,10 @@ const App = () => {
 
   const handleGetAvaibleId = (): number => {
     let id: number = 1
-    for (let cart in carts) {
+    carts.forEach(() => {
       if (!carts.some((cart) => cart.id === id)) return id
       id++
-    }
+    })
     return id
   }
 
