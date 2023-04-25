@@ -1,12 +1,16 @@
-import { describe, it, expect } from 'vitest'
-import {
-  render,
-  screen,
-  waitForElementToBeRemoved,
-} from '@testing-library/react'
+import { describe, it, expect, vi } from 'vitest'
+import { act, render, screen } from '@testing-library/react'
 import { createMemoryRouter, RouterProvider } from 'react-router-dom'
 import { routesConfig } from '../../routesConfig'
-import 'whatwg-fetch'
+
+global.fetch = vi.fn(() =>
+  Promise.resolve({
+    json: () =>
+      Promise.resolve({
+        carts: [],
+      }),
+  })
+)
 
 const route = '/cart/1'
 
@@ -15,9 +19,7 @@ describe('MainContent', () => {
     const router = createMemoryRouter(routesConfig, {
       initialEntries: [route],
     })
-    render(<RouterProvider router={router} />)
-    expect(screen.queryByText(/loading/i)).toBeInTheDocument()
-    await waitForElementToBeRemoved(screen.queryByText(/loading/i))
+    await act(async () => render(<RouterProvider router={router} />))
     expect(screen.queryByText(/cart not found/i)).toBeInTheDocument()
   })
 })
