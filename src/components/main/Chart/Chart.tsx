@@ -1,4 +1,4 @@
-import Product from '../../interfaces/ProductInterface'
+import Product from '../../../interfaces/ProductInterface'
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -10,8 +10,8 @@ import {
   Legend,
 } from 'chart.js'
 import { Line } from 'react-chartjs-2'
-import { ChartProps } from '../../types/main-types'
-import '../../styles/main/Chart.scss'
+import { ChartProps } from '../../../types/main-types'
+import './Chart.scss'
 
 ChartJS.register(
   CategoryScale,

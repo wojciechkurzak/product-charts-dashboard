@@ -1,4 +1,4 @@
-import '../../styles/misc/LoadingPage.scss'
+import './LoadingPage.scss'
 
 const LoadingPage = () => {
   return (

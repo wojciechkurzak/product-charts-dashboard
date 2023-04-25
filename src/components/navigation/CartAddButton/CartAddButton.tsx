@@ -1,5 +1,5 @@
-import { CartAddButtonProps } from '../../types/navigation-types'
-import '../../styles/navigation/CartAddButton.scss'
+import { CartAddButtonProps } from '../../../types/navigation-types'
+import './CartAddButton.scss'
 
 const CartAddButton = ({ onClick }: CartAddButtonProps) => {
   return (

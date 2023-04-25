@@ -1,10 +1,10 @@
 import { useState } from 'react'
-import CartAddButton from './CartAddButton'
-import CartEditButton from './CartEditButton'
-import CartList from './CartList'
-import { NavigationProps } from '../../types/navigation-types'
+import CartAddButton from '../CartAddButton/CartAddButton'
+import CartEditButton from '../CartEditButton/CartEditButton'
+import CartList from '../CartList/CartList'
+import { NavigationProps } from '../../../types/navigation-types'
 import { useNavigate } from 'react-router-dom'
-import '../../styles/navigation/Navigation.scss'
+import './Navigation.scss'
 
 const Navigation = ({ carts, remove, menu, menuHide }: NavigationProps) => {
   const [edit, setEdit] = useState<boolean>(false)

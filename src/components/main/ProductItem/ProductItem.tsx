@@ -1,5 +1,5 @@
-import { ProductProps } from '../../types/main-types'
-import '../../styles/main/ProductItem.scss'
+import { ProductProps } from '../../../types/main-types'
+import './ProductItem.scss'
 
 const ProductItem = ({ product }: ProductProps) => {
   return (

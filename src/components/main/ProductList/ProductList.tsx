@@ -1,7 +1,7 @@
-import { ProductListProps } from '../../types/main-types'
-import Product from '../../interfaces/ProductInterface'
-import ProductItem from './ProductItem'
-import '../../styles/main/ProductList.scss'
+import { ProductListProps } from '../../../types/main-types'
+import Product from '../../../interfaces/ProductInterface'
+import ProductItem from '../ProductItem/ProductItem'
+import './ProductList.scss'
 
 const ProductList = ({ products }: ProductListProps) => {
   return (

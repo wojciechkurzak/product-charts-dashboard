@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
-import AddProductItem from './AddProductItem'
-import Product from '../../interfaces/ProductInterface'
-import { AddProductListProps } from '../../types/main-types'
-import '../../styles/main/AddProductList.scss'
+import AddProductItem from '../AddProductItem/AddProductItem'
+import Product from '../../../interfaces/ProductInterface'
+import { AddProductListProps } from '../../../types/main-types'
+import './AddProductList.scss'
 
 const AddProductList = ({ add }: AddProductListProps) => {
   const [avaibleProducts, setAvaibleProducts] = useState<Product[] | null>(null)

@@ -1,6 +1,6 @@
-import { CartEditButtonProps } from '../../types/navigation-types'
+import { CartEditButtonProps } from '../../../types/navigation-types'
 import { MdEdit } from 'react-icons/md'
-import '../../styles/navigation/CartEditButton.scss'
+import './CartEditButton.scss'
 
 const CartEditButton = ({ edit, onClick }: CartEditButtonProps) => {
   return (

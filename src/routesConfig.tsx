@@ -1,8 +1,8 @@
 import App from './App'
-import CreateCart from './components/main/CreateCart'
-import MainContent from './components/main/MainContent'
-import ErrorPage from './components/misc/ErrorPage'
-import HomePage from './components/misc/HomePage'
+import CreateCart from './components/main/CreateChart/CreateCart'
+import MainContent from './components/main/MainContent/MainContent'
+import ErrorPage from './components/misc/ErrorPage/ErrorPage'
+import HomePage from './components/main/HomePage/HomePage'
 
 export const routesConfig = [
   {

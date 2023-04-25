@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
 import Header from './components/header/Header'
-import Navigation from './components/navigation/Navigation'
+import Navigation from './components/navigation/Navigation/Navigation'
 import { Outlet, useLocation, useNavigate } from 'react-router-dom'
 import Cart from './interfaces/CartInterface'
-import LoadingPage from './components/misc/LoadingPage'
+import LoadingPage from './components/misc/LoadingPage/LoadingPage'
 import Product from './interfaces/ProductInterface'
 import './App.scss'
 

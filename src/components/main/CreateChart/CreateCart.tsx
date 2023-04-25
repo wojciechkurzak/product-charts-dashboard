@@ -1,10 +1,10 @@
 import { useState } from 'react'
-import AddProductButton from './AddProductButton'
-import AddProductList from './AddProductList'
+import AddProductButton from '../AddProductButton/AddProductButton'
+import AddProductList from '../AddProdcutList/AddProductList'
 import { useOutletContext } from 'react-router-dom'
-import { ContextInteface } from '../../interfaces/ContextInterface'
-import Product from '../../interfaces/ProductInterface'
-import '../../styles/main/CreateCart.scss'
+import { ContextInteface } from '../../../interfaces/ContextInterface'
+import Product from '../../../interfaces/ProductInterface'
+import './CreateCart.scss'
 
 const CreateCart = () => {
   const [pickedProducts, setPickedProducts] = useState<Product[]>([])

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
-import { AddProductItemProps } from '../../types/main-types'
-import '../../styles/main/AddProductItem.scss'
+import { AddProductItemProps } from '../../../types/main-types'
+import './AddProductItem.scss'
 
 const AddProductItem = ({ product, add }: AddProductItemProps) => {
   const [quantity, setQuantity] = useState<string>('')

@@ -1,5 +1,5 @@
-import { AddProductButtonProps } from '../../types/main-types'
-import '../../styles/main/AddProductButton.scss'
+import { AddProductButtonProps } from '../../../types/main-types'
+import './AddProductButton.scss'
 
 const AddProductButton = ({ create }: AddProductButtonProps) => {
   return (

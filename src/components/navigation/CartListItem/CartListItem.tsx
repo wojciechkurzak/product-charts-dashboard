@@ -1,7 +1,7 @@
-import { CartListItemProps } from '../../types/navigation-types'
+import { CartListItemProps } from '../../../types/navigation-types'
 import { IoMdTrash } from 'react-icons/io'
 import { NavLink } from 'react-router-dom'
-import '../../styles/navigation/CartListItem.scss'
+import './CartListItem.scss'
 
 const CartListItem = ({ cart, edit, remove, menuHide }: CartListItemProps) => {
   return (

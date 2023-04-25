@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom'
 import { FiMenu } from 'react-icons/fi'
 import { HeaderProps } from '../../types/header-types'
-import '../../styles/header/Header.scss'
+import './Header.scss'
 
 const Header = ({ onClick }: HeaderProps) => {
   return (

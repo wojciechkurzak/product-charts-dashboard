@@ -1,8 +1,8 @@
 import { useLocation, useOutletContext } from 'react-router-dom'
-import Chart from './Chart'
-import ProductList from './ProductList'
-import { ContextInteface } from '../../interfaces/ContextInterface'
-import '../../styles/main/MainContent.scss'
+import Chart from '../Chart/Chart'
+import ProductList from '../ProductList/ProductList'
+import { ContextInteface } from '../../../interfaces/ContextInterface'
+import './MainContent.scss'
 
 const MainContent = () => {
   const context = useOutletContext<ContextInteface>()
