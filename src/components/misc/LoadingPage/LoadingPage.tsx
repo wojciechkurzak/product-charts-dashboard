@@ -2,7 +2,7 @@ import './LoadingPage.scss'
 
 const LoadingPage = () => {
   return (
-    <div className='loading-page'>
+    <div className='loading'>
       <div></div>
       <p>Loading</p>
     </div>

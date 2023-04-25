@@ -18,6 +18,7 @@ export type AddProductButtonProps = {
 
 export type AddProductListProps = {
   add: (product: Product) => void
+  products: Product[]
 }
 
 export type AddProductItemProps = {

@@ -16,3 +16,12 @@ span {
   font-family: 'Roboto', sans-serif;
   color: #fff;
 }
+
+.App {
+  .loading-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+}

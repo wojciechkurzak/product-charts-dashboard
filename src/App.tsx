@@ -71,7 +71,9 @@ const App = () => {
           <Outlet context={{ carts: carts, addCart: handleAddCart }} />
         </>
       ) : (
-        <LoadingPage />
+        <div className='loading-page'>
+          <LoadingPage />
+        </div>
       )}
     </div>
   )
