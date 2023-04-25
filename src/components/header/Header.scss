@@ -29,6 +29,17 @@ header {
     a {
       text-decoration: none;
     }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      img {
+        width: 32px;
+        height: 100%;
+      }
+    }
   }
 }
 

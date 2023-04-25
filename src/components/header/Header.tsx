@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router-dom'
 import { FiMenu } from 'react-icons/fi'
 import { HeaderProps } from '../../types/header-types'
+import logo from '../../images/logo.png'
 import './Header.scss'
 
 const Header = ({ onClick }: HeaderProps) => {
@@ -10,7 +11,12 @@ const Header = ({ onClick }: HeaderProps) => {
         <FiMenu />
       </button>
       <h1>
-        <NavLink to='/'>Dashboard</NavLink>
+        <NavLink to='/'>
+          <div className='logo'>
+            <img src={logo} alt='logo' />
+            <p>Dashboard</p>
+          </div>
+        </NavLink>
       </h1>
     </header>
   )
