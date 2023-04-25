@@ -43,7 +43,7 @@ const App = () => {
     if (products.length === 0) return
     const id = handleGetAvaibleId()
     const newCart = { id: id, products: products }
-    setCarts([...carts, newCart])
+    setCarts([newCart, ...carts])
     navigate(`/cart/${id}`)
   }
 
