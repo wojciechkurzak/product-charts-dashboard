@@ -15,7 +15,7 @@ const MainContent = () => {
   const isCartExist = carts.some((cart) => cart.id === parseInt(routeId))
 
   return (
-    <div className='main-content'>
+    <main className='main-content'>
       {isCartExist ? (
         <>
           <Chart products={currentCart[0].products} />
@@ -26,7 +26,7 @@ const MainContent = () => {
           <p>Cart not found</p>
         </div>
       )}
-    </div>
+    </main>
   )
 }
 

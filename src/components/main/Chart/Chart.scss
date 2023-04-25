@@ -8,8 +8,22 @@
   }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-height: 480px) and (orientation: landscape) {
   .chart {
     height: 420px;
+
+    canvas {
+      min-height: 200px;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) and (orientation: portrait) {
+  .chart {
+    height: 420px;
+
+    canvas {
+      min-height: 320px;
+    }
   }
 }
