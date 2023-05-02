@@ -10,7 +10,7 @@ global.fetch = vi.fn(() =>
         carts: [],
       }),
   })
-)
+) as any
 
 const goodRoute = '/'
 const badRoute = '/cartsss'

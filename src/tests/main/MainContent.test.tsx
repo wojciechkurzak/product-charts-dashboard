@@ -10,7 +10,7 @@ global.fetch = vi.fn(() =>
         carts: [],
       }),
   })
-)
+) as any
 
 const route = '/cart/1'
 
